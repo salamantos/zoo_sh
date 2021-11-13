@@ -5,15 +5,13 @@ function get_animal() {
     echo "${ANIMALS[@]:$((random % ${#ANIMALS[@]})):1}"
 }
 
-local return_status="%(?: :%{$fg_bold[red]%} )"
-
-local prompt_symbol="%(?:%{$fg_bold[green]%}❯:%{$fg_bold[red]%}❯"
+local prompt_symbol="%(?:%{$fg_bold[green]%}❯ :%{$fg_bold[red]%}❯"
 
 local path_string="%F{cyan}%~"
 
 local time="%F{#adadad}%*"
 
-PROMPT='$(get_animal)${return_status}${prompt_symbol} '
+PROMPT='$(get_animal) ${prompt_symbol} '
 RPROMPT='${path_string} $(git_prompt_info)${time}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
