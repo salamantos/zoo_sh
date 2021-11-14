@@ -7,8 +7,7 @@ function get_animal() {
 
 local prompt_symbol="%(?:%{$fg_bold[green]%}❯ :%{$fg_bold[red]%}❯"
 
-local root_indicator="%(!.⚡ .)"
-
+[[ $UID -eq 0 ]] && root_indicator="⚡ " || root_indicator=""
 local path_string="%F{cyan}%~"
 
 local time="%F{#adadad}%*"
