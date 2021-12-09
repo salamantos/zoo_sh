@@ -5,18 +5,18 @@ function get_animal() {
     echo "${ANIMALS[@]:$((random % ${#ANIMALS[@]})):1}"
 }
 
-local prompt_symbol="%(?:%{$fg_bold[green]%}❯ :%{$fg_bold[red]%}❯"
+local prompt_symbol="%{$reset_color%}%(?:%{$fg_bold[green]%}❯ :%{$fg_bold[red]%}❯%{$reset_color%}"
 
 [[ $UID -eq 0 ]] && root_indicator="⚡ " || root_indicator=""
-local path_string="%F{cyan}%~"
+local path_string="%{$reset_color%}%F{cyan}%~%{$reset_color%}"
 
-local time="%F{#adadad}%*"
+local time="%{$reset_color%}%F{#adadad}%*%{$reset_color%}"
 
 PROMPT='$(get_animal) ${root_indicator}${prompt_symbol} '
 RPROMPT='${path_string} $(git_prompt_info)${time}'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX=" "
-ZSH_THEME_GIT_PROMPT_DIRTY=""
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX=" %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
