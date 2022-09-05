@@ -1,6 +1,9 @@
 ### zoo_sh
 Casual zsh theme with animals emoji
 
+![zoo](https://user-images.githubusercontent.com/25982895/188511547-5c982aca-3385-4096-9ee1-53539ecdd9ae.gif)
+
+
 ### Installation
 0. Install [oh-my-zsh](https://ohmyz.sh/): `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 1. Create directory: `mkdir $ZSH_CUSTOM/themes` *(skip if already exists)*
